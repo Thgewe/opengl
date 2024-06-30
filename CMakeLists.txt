@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.26 FATAL_ERROR)
 
-project(VoukOpenGL)
+set(PROJECT_NAME VoukOpenGL)
 
-add_executable(VoukOpenGL src/main.cpp)
+project(${PROJECT_NAME})
+
+add_executable(${PROJECT_NAME} src/main.cpp)
+add_subdirectory(external/glfw)
+target_link_libraries(${PROJECT_NAME} glfw)
